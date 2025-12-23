@@ -18,7 +18,7 @@ def cross_val(k, data):
     errors = []
     L = len(data)//k
     for j in range(k):
-        model = sklearn.ensemble.RandomForestClassifier(random_state= 69)
+        model = sklearn.ensemble.RandomForestClassifier(random_state= 34)
         test_data = data[L*j:L*(j+1),:]
         train_data = np.vstack([data[0:L * j,:], data[L * (j + 1):,:]])
         model.fit(train_data[:,:-1], train_data[:,-1])
@@ -28,7 +28,7 @@ def cross_val(k, data):
         errors.append(err)
     return np.mean(errors)
 def image_cross_val(k, dataset):
-    
+    pass
 
 results = []
 print(cross_val(10, data_2))
